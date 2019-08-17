@@ -1,0 +1,94 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+
+body{
+    margin: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.container{
+    margin: 50px;
+    display: flex;
+    width: 100%;
+}
+
+h1 {
+    display: block;
+    margin: 20px auto;
+    color: navy;
+    text-align: center;
+    width: 100%;
+}
+
+.formBox {
+    display: inline-block;
+    width: 33%;
+    vertical-align: top;
+}
+
+.formBoxMessage {
+    display: inline-block;
+    width: 28%;
+    vertical-align: top;
+    margin-top: 100px;
+}
+
+form{
+    margin: 10px auto;
+    display: block;
+    border: 5px solid black;
+    padding: 15px;
+    width: 450px;
+}
+
+.label {
+    float: left;
+    text-align: right;
+}
+
+input {
+    margin: 8px;
+    height: 32px;
+    width: 210px;
+    text-align: left;
+    
+}
+
+.field-validation-error {
+    text-align: center;
+    display: block;
+    margin: 4px auto;
+    color: red;
+}
+
+.btn {
+    display: block;
+    margin: 5px auto;
+    width: auto;
+}
+
+/* results page-specfic .css stylings */
+
+.container{
+    width: 100%;
+    height: 400px;
+}
+
+.displayInfo {
+    width: 35%;
+    display: block;
+    height: 200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.displayInfo span {
+    font-weight: bold;
+}
+
+h3{
+    text-align: center;
+}

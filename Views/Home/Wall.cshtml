@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>The WALL</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="~/css/wall.css">
+    </head>
+    <body>
+    @model WallViewModel
+        <div class="header">
+            <h1>Coding Dojo Wall</h1>
+            <h3>Welcome @Model.User.FirstName</h3>
+            <a href="/logout">Log Out</a>
+        </div>
+
+        <div class="messageBox">
+            <div class = "formBox">
+                <form asp-action="CreateMessage" asp-controller="Home" method="post">
+                    <span asp-validation-for="Message.messageContent"></span>
+                    <label asp-for="Message.messageContent">Post a Message (If you'd like to delete, you must do it within 30 minutes of posting!</label>
+                    <textarea asp-for="Message.messageContent"></textarea>
+                    <input class = "btn" value="POST MESSAGE" type="submit">
+                </form>
+            </div>
+        </div>
+
+        <div class="messageBox">
+        @{
+            foreach(Message message in Model.Messages){
+                <div class="formBox">
+                    <h5>@message.User.FirstName @message.User.LastName - @message.CreatedAt.ToString("MMMM d, yyyy")</h5>
+                    <p>@message.messageContent</p>
+                    @if(message.User == Model.User && message.CreatedAt.AddMinutes(30) > DateTime.Now)
+                    {
+                        <a href="/message/delete/@message.MessageId">delete message</a>
+                    }
+                </div>
+                    @foreach(Comment comment in message.Comments)
+                    {
+                    <div class="messageBox">
+                        <div class="formBox">
+                            <h5>@comment.User.FirstName @comment.User.LastName - @comment.CreatedAt.ToString("MMMM d, yyyy")</h5>
+                            <p>@comment.commentContent</p>
+                        </div>
+                    </div>
+                    }           
+                    <div class="messageBox">
+                        <div class = "formBox">
+                            <form asp-action="CreateComment" asp-route-MessageId="@message.MessageId" asp-controller="Home" method="post">
+                                <span asp-validation-for="Comment.commentContent"></span>
+                                <label asp-for="Comment.commentContent">Add A Comment </label>
+                                <textarea asp-for="Comment.commentContent"></textarea>
+                                <input class = "btn" value="POST COMMENT" type="submit">
+                            </form>
+                        </div>
+                    </div>
+                        
+                    
+                
+            }  
+        } 
+        </div>
+    </body>
+</html>

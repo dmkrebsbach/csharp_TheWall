@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Wedding Planner! Login Page</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="~/css/login.css">
+	</head>
+    <body>
+        @model LoginViewModel
+        <h1>Welcome To PROJECTNAME!</h1>
+        <div class="container">
+            <div class = "formBox">
+                <h1>Create Account</h1>
+                <form asp-action="CreateUser" asp-controller="Home" method="post">
+                    <label asp-for="newUser.FirstName">First Name: </label>
+                    <input asp-for="newUser.FirstName"><br>
+                    <label asp-for="newUser.LastName">Last Name: </label>
+                    <input asp-for="newUser.LastName"><br>
+                    <label asp-for="newUser.Email">Email: </label>
+                    <input asp-for="newUser.Email"><br>
+                    <label asp-for="newUser.Password">Password: </label>
+                    <input asp-for="newUser.Password"><br>
+                    <label asp-for="newUser.ConfirmPassword">Confirm Password: </label>
+                    <input asp-for="newUser.ConfirmPassword"><br>
+                    <input class = "btn" value="REGISTER" type="submit">
+                </form>
+            </div>
+            <div class = "formBoxMessage">
+                <span asp-validation-for="newUser.FirstName"></span>
+                <span asp-validation-for="newUser.LastName"></span>
+                <span asp-validation-for="newUser.Email"></span>
+                <span asp-validation-for="newUser.Password"></span>
+                <span asp-validation-for="newUser.ConfirmPassword"></span>
+                <span asp-validation-for="newLogin.loginEmail"></span>
+                <span asp-validation-for="newLogin.loginPassword"></span>
+                
+            </div>
+            <div class = "formBox">
+                <h1>Login</h1>
+                <form asp-action="LoginUser" asp-controller="Home" method="post">
+                    <label asp-for="newLogin.loginEmail">Email: </label>
+                    <input asp-for="newLogin.loginEmail"><br>
+                    <label asp-for="newLogin.loginPassword">Password: </label>
+                    <input asp-for="newLogin.loginPassword"><br>
+                    <input value="LOGIN" class = "btn" type="submit">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

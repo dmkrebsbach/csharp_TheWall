@@ -1,0 +1,75 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    border-bottom: 1px solid black;
+}
+
+.header h1 {
+    width: 40%;
+    display: inline-block;
+    margin: 10px 25px;
+    color: navy;
+}
+
+.header h3 {
+    width: 35%;
+    display: inline-block;
+    color: red;
+    margin: 10px 25px;
+}
+
+.header a {
+    width: 10%;
+    display: inline-block;
+    color: red;
+    margin: 10px 25px;
+}
+
+.messageBox {
+    width: 100%;
+    margin: 25px auto;
+}
+
+.formBox {
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+}
+
+.formBox h3 {
+    margin: 3px auto;
+    width: 90%;
+}
+
+.formBox p {
+    margin: 3px auto;
+    width: 87%;
+}
+
+.formBox h5 {
+    margin: 3px auto;
+    width: 90%;
+}
+
+form {
+    margin: 3px auto;
+    width: 90%;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px auto;
+}
+
+.formBox a {
+    margin: 6px auto;
+    width: 87%;
+    color: red;
+    display: block;
+    text-decoration: none;
+}
